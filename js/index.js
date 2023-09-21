@@ -10,6 +10,12 @@ const setName = (name) => {
   document.querySelector(".greeting.off").className = "greeting on";
 };
 
+const setAge = (age) => {
+  document.querySelector(".age-number").textContent =
+    new Date().getFullYear() - age.split("-")[0];
+  document.querySelector(".data.age.off").className = "data age on";
+};
+
 formElement.addEventListener("change", (event) => {
   switch (event.target) {
     case nameInputElement:
@@ -18,7 +24,7 @@ formElement.addEventListener("change", (event) => {
       break;
     case birthdateInputElement:
       // Invoca a la función para poner la edad
-
+      setAge(event.target.value);
       break;
     case pictureInputElement:
       // Invoca a la función para poner la imagen
