@@ -39,13 +39,13 @@ const setSuffering = (sufferingQuantity) => {
   const classSufferingQuantity = document.querySelector(".suffering-quantity");
   if (sufferingQuantity < 5) {
     classSufferingQuantity.textContent = "poco";
-    classSufferingQuantity.className += " suffering-danger";
+    classSufferingQuantity.className = "suffering-quantity suffering-danger";
   } else if (sufferingQuantity < 8) {
     classSufferingQuantity.textContent = "normal";
-    classSufferingQuantity.className += " suffering-warning";
+    classSufferingQuantity.className = "suffering-quantity suffering-warning";
   } else {
     classSufferingQuantity.textContent = "mucho";
-    classSufferingQuantity.className += " suffering-ok";
+    classSufferingQuantity.className = "suffering-quantity suffering-ok";
   }
   document.querySelector(".data.suffering.off").className = "data suffering on";
 };
