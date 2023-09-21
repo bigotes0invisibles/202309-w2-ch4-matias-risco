@@ -35,6 +35,21 @@ const setImg = (img) => {
   document.querySelector(".avatar.off").className = "avatar on";
 };
 
+const setSuffering = (sufferingQuantity) => {
+  const classSufferingQuantity = document.querySelector(".suffering-quantity");
+  if (sufferingQuantity < 5) {
+    classSufferingQuantity.textContent = "poco";
+    classSufferingQuantity.className += " suffering-danger";
+  } else if (sufferingQuantity < 8) {
+    classSufferingQuantity.textContent = "normal";
+    classSufferingQuantity.className += " suffering-warning";
+  } else {
+    classSufferingQuantity.textContent = "mucho";
+    classSufferingQuantity.className += " suffering-ok";
+  }
+  document.querySelector(".data.suffering.off").className = "data suffering on";
+};
+
 formElement.addEventListener("change", (event) => {
   switch (event.target) {
     case nameInputElement:
@@ -55,7 +70,7 @@ formElement.addEventListener("change", (event) => {
       break;
     case sufferingInputElement:
       // Invoca a la función para poner el grado de sufrimiento
-
+      setSuffering(event.target.value);
       break;
   }
 });
