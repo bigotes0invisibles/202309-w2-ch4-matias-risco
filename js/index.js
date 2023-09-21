@@ -30,6 +30,11 @@ const setJavaScript = (isProgramerJavascript) => {
     "data javascript on";
 };
 
+const setImg = (img) => {
+  document.querySelector(".avatar").src = img;
+  document.querySelector(".avatar.off").className = "avatar on";
+};
+
 formElement.addEventListener("change", (event) => {
   switch (event.target) {
     case nameInputElement:
@@ -42,7 +47,7 @@ formElement.addEventListener("change", (event) => {
       break;
     case pictureInputElement:
       // Invoca a la función para poner la imagen
-
+      setImg(event.target.value);
       break;
     case javascriptInputElement:
       // Invoca a la función para poner si ha programado previamente JS o no
