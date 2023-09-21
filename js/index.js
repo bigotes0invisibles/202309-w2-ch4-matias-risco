@@ -16,6 +16,20 @@ const setAge = (age) => {
   document.querySelector(".data.age.off").className = "data age on";
 };
 
+const setJavaScript = (isProgramerJavascript) => {
+  if (
+    document.querySelector(".javascript-yes").className.split(" ")[1] != "on"
+  ) {
+    document.querySelector(".javascript-yes").className = "javascript-yes on";
+    document.querySelector(".javascript-no").className = "javascript-no off";
+  } else {
+    document.querySelector(".javascript-yes").className = "javascript-yes off";
+    document.querySelector(".javascript-no").className = "javascript-no on";
+  }
+  document.querySelector(".data.javascript.off").className =
+    "data javascript on";
+};
+
 formElement.addEventListener("change", (event) => {
   switch (event.target) {
     case nameInputElement:
@@ -32,7 +46,7 @@ formElement.addEventListener("change", (event) => {
       break;
     case javascriptInputElement:
       // Invoca a la función para poner si ha programado previamente JS o no
-
+      setJavaScript(event.target.value);
       break;
     case sufferingInputElement:
       // Invoca a la función para poner el grado de sufrimiento
