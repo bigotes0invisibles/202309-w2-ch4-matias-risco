@@ -7,13 +7,13 @@ const sufferingInputElement = formElement.querySelector("#suffering");
 
 const setName = (name) => {
   document.querySelector(".name").textContent = name;
-  document.querySelector(".greeting.off").className = "greeting on";
+  document.querySelector(".greeting").className = "greeting on";
 };
 
 const setAge = (age) => {
   document.querySelector(".age-number").textContent =
     new Date().getFullYear() - age.split("-")[0];
-  document.querySelector(".data.age.off").className = "data age on";
+  document.querySelector(".data.age").className = "data age on";
 };
 
 const setJavaScript = (isProgramerJavascript) => {
@@ -26,13 +26,12 @@ const setJavaScript = (isProgramerJavascript) => {
     document.querySelector(".javascript-yes").className = "javascript-yes off";
     document.querySelector(".javascript-no").className = "javascript-no on";
   }
-  document.querySelector(".data.javascript.off").className =
-    "data javascript on";
+  document.querySelector(".data.javascript").className = "data javascript on";
 };
 
 const setImg = (img) => {
   document.querySelector(".avatar").src = img;
-  document.querySelector(".avatar.off").className = "avatar on";
+  document.querySelector(".avatar").className = "avatar on";
 };
 
 const setSuffering = (sufferingQuantity) => {
@@ -47,7 +46,7 @@ const setSuffering = (sufferingQuantity) => {
     classSufferingQuantity.textContent = "mucho";
     classSufferingQuantity.className = "suffering-quantity suffering-ok";
   }
-  document.querySelector(".data.suffering.off").className = "data suffering on";
+  document.querySelector(".data.suffering").className = "data suffering on";
 };
 
 formElement.addEventListener("change", (event) => {
