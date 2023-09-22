@@ -11,8 +11,21 @@ const setName = (name) => {
 };
 
 const setAge = (age) => {
-  document.querySelector(".age-number").textContent =
-    new Date().getFullYear() - age.split("-")[0];
+  const datediv = [1, 12, 365.2425];
+  const date = new Date()
+    .toLocaleDateString()
+    .split("/")
+    .map((timeyms, pocistion, date) =>
+      Number(date[date.length - pocistion - 1])
+    );
+  document.querySelector(".age-number").textContent = age
+    .split("-")
+    .reduce(
+      (acumulator, timeyms, pocistion) =>
+        acumulator + (date[pocistion] - Number(timeyms)) / datediv[pocistion],
+      0
+    )
+    .toFixed(2);
   document.querySelector(".data.age").className = "data age on";
 };
 
